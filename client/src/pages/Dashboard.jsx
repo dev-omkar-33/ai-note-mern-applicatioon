@@ -66,18 +66,22 @@ const Dashboard = () => {
 
             </section>
 
-            <section className="bg-white">
+            <section className="w-full flex justify-center">
 
-                <div className="">
+                <div className="bg-white min-w-[900px] rounded-md">
+
+                <div className="flex justify-between mx-16">
                     <div className="">
                         <h3 className="">Daily Productivity</h3>
                         <p className="">Your note activity this week</p>
                     </div>
-                    <span className="">This week</span>
+                    <button className="text-green-500 bg-gray-700 rounded-md px-4 text-sm">This week</button>
+                    {/* <span className="">This week</span> */}
                 </div>
 
                 <div className="">
                     <Areachart/>
+                </div>
                 </div>
 
             </section>
