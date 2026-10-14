@@ -68,38 +68,47 @@ const Dashboard = () => {
 
             <section className="w-full flex justify-center">
 
-                <div className="bg-white min-w-[900px] rounded-md">
+                <div className="bg-white w-[900px] rounded-xl">
 
-                <div className="flex justify-between mx-16">
+                <div className="flex justify-between mx-16 p-4">
                     <div className="">
-                        <h3 className="">Daily Productivity</h3>
+                        <h3 className="font-bold">Daily Productivity</h3>
                         <p className="">Your note activity this week</p>
                     </div>
-                    <button className="text-green-500 bg-gray-700 rounded-md px-4 text-sm">This week</button>
+                    <button className="text-black font-bold bg-gray-100 rounded-md px-3 text-sm">This week</button>
                     {/* <span className="">This week</span> */}
                 </div>
 
-                <div className="">
-                    <Areachart/>
+                <div className="w-full px-3">
+                    <Areachart className=""/>
                 </div>
+
                 </div>
 
             </section>
 
-            <section className="bg-white">
+            <section className="mt-6 w-full flex justify-center">
 
-                <div className="text-red-400">Quick Actions</div>
+                <div className="bg-white w-[900px] p-3 rounded-xl">
+
+                <div className="text-black font-bold text-[16px] ">Quick Actions</div>
                 <div className="">Jump into your most used tools</div>
 
-                <div className="">
-                    <div className="">
-                        <span className="">+</span>
+                <div className="flex mt-3 justify-between">
+                    <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
                         New Note
                     </div>
+                     <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
+                        Ask AI
+                    </div>
+                     <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
+                        Search
+                    </div>
                     
-                    <div className="">Ask AI</div>
-                    <div className="">Search</div>
-                    
+                </div>
                 </div>
 
             </section>

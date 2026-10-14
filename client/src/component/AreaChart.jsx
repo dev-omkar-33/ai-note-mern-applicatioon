@@ -13,7 +13,7 @@ const Notes = [
 
 const Areachart = () => {
     return (
-        <div className="max-w-[500px] h-[200px]">
+        <div className="w-full h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={Notes}>
                     <XAxis dataKey="day" />
