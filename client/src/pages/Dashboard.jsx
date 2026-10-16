@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegBell } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa6";
 import logo from '../assets/doc-success-svgrepo-com.svg';
 import Areachart from '../component/AreaChart.jsx'
 const Dashboard = () => {
@@ -10,7 +11,7 @@ const Dashboard = () => {
 
             {/* Header */}
 
-            <header className="flex justify-between items-center mx-8 pt-4">
+            <header className="flex justify-between items-center mx-8 pt-4 ">
                 
                 <div className="flex">
 
@@ -66,6 +67,7 @@ const Dashboard = () => {
 
             </section>
 
+            {/* Chart sect */}
             <section className="w-full flex justify-center">
 
                 <div className="bg-white w-[900px] rounded-xl">
@@ -87,14 +89,15 @@ const Dashboard = () => {
 
             </section>
 
+            {/* Action section  */}
             <section className="mt-6 w-full flex justify-center">
 
-                <div className="bg-white w-[900px] p-3 rounded-xl">
+                <div className="bg-white w-[900px] px-15 py-10 rounded-xl">
 
                 <div className="text-black font-bold text-[16px] ">Quick Actions</div>
                 <div className="">Jump into your most used tools</div>
 
-                <div className="flex mt-3 justify-between">
+                <div className="flex mt-14 justify-between">
                     <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
                         <span className="text-[24px] font-bold">+</span>
                         New Note
@@ -112,6 +115,91 @@ const Dashboard = () => {
                 </div>
 
             </section>
+
+            {/* Note card section  */}
+          
+            <section className="mt-6 w-full flex justify-center">
+
+                <div className="bg-white w-[900px] px-15 py-4 rounded-xl">
+
+                <div className="">
+                    <h2 className="font-bold text-[17px]">Recent Notes</h2>
+                    <h4 className="text-[15px]">Latest captured ideas and summaries </h4>
+                </div>
+            {/*  */}
+                <div className="mt-7 flex flex-row justify-between hover:border hover:rounded-xl px-3 py-2 items-center">
+                    <div className="flex flex-row items-center">
+                        <div className="">Logo</div>
+
+                        <div className="ml-7">
+                            <p className="">Project roadmap brainstorm</p>
+                            <p className="text-[13px]">AI summaries . Time</p>
+                        </div>   
+                    </div>
+
+                    <div className=""><FaAngleRight/></div>
+                </div>
+            {/*  */}
+                <div className="mt-7 flex flex-row justify-between hover:border hover:rounded-xl px-3 py-2 items-center">
+                    <div className="flex flex-row items-center">
+                        <div className="">Logo</div>
+
+                        <div className="ml-7">
+                            <p className="">Project roadmap brainstorm</p>
+                            <p className="text-[13px]">AI summaries . Time</p>
+                        </div>   
+                    </div>
+
+                    <div className=""><FaAngleRight/></div>
+                </div>
+            {/*  */}
+                <div className="mt-7 flex flex-row justify-between hover:border hover:rounded-xl px-3 py-2 items-center">
+                    <div className="flex flex-row items-center">
+                        <div className="">Logo</div>
+
+                        <div className="ml-7">
+                            <p className="">Project roadmap brainstorm</p>
+                            <p className="text-[13px]">AI summaries . Time</p>
+                        </div>   
+                    </div>
+
+                    <div className=""><FaAngleRight/></div>
+                </div>
+
+                </div>
+                
+
+            </section>
+
+            {/* Footer */}
+           
+            <footer className="mt-6 w-full flex justify-center">
+
+                <div className="bg-white min-w-full px-31 py-1 flex flex-row justify-between ">
+
+                       <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                            <span className="text-[24px] font-bold">+</span>
+                            Notes
+                        </div>
+
+                       <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
+                            AI Assistant
+                    </div>
+
+                       <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
+                            Search
+                    </div>
+
+                       <div className="flex flex-col border items-center p-2 rounded-md w-[90px]">
+                        <span className="text-[24px] font-bold">+</span>
+                            Profile
+                    </div>
+
+                </div>
+
+            </footer>
 
         </div>
     </>
