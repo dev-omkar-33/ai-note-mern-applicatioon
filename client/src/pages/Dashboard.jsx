@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaRegBell } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
 import logo from '../assets/doc-success-svgrepo-com.svg';
 import Areachart from '../component/AreaChart.jsx'
+// import { Newnote } from '../pages/Newnote.jsx'
+import { Link } from "react-router-dom";
+
 const Dashboard = () => {
 
     return(
@@ -11,7 +14,7 @@ const Dashboard = () => {
 
             {/* Header */}
 
-            <header className="flex justify-between items-center mx-8 pt-4 sticky top-0 bg-black z-50">
+            <header className="flex justify-between items-center px-8 pt-4 sticky top-0 bg-black z-50">
                 
                 <div className="flex">
 
@@ -98,10 +101,12 @@ const Dashboard = () => {
                 <div className="">Jump into your most used tools</div>
 
                 <div className="flex mt-14 justify-between">
+                    <Link to="/newnote">
                     <div className="flex flex-col border items-center p-2 rounded-md w-[90px] hover:bg-blue-500 text-sm hover:text-white transition-colors duration-700">
-                        <span className="text-[20px] font-bold">+</span>
+                        <span className="text-[20px] font-bold">+</span> 
                         New Note
                     </div>
+                    </Link>
                      <div className="flex flex-col border items-center p-2 rounded-md w-[90px] text-sm hover:text-white hover:bg-blue-500 transition-colors duration-700">
                         <span className="text-[20px] font-bold">+</span>
                         Ask AI
