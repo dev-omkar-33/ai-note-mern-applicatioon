@@ -1,145 +1,96 @@
-import { useState } from "react";
-import {useNavigate} from 'react-router-dom';
-import api from '../services/api';
+import React from "react"
+import { Link } from "react-router"
+import { FaLightbulb } from "react-icons/fa6";
+import { SlNotebook } from "react-icons/sl";
+import { FaSearch } from "react-icons/fa";
+import { Eye, EyeOff } from "lucide-react";
 
+export default function Register(){
+    return(<>
+        <div className="min-h-screen flex justify-content align-center">
+            {/* Left side */}
+            <div className="bg-blue-400 min-w-[50%] flex flex-col pl-10 pt-7">
 
-const Register = () => {
+                <h1 className="text-white text-4xl font-bold">NoteAI</h1>
 
-    const [formData,setFormData] = useState({
-        first_name:"",
-        last_name:"",
-        email:"",
-        password:"",
-        confirmPassword:""
-
-    });
-
-    const [loading,setLoading] = useState(false);
-    const [Error,setError] = useState("");
-
-    const navigate = useNavigate();
-
-    const handleChange = async(e) =>{
-        // e.preventDefault();
-        setFormData({...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleRegister = async(e) =>{
-        e.preventDefault();
-        
-        setError("");
-
-        if(formData.password !== formData.confirmPassword){
-            window.alert("Password do not match, Must be 6 character");
-            setError("Password do not match");
-            return;
-        };
-
-        setLoading(true);
-
-        try {
-
-            await api.post("/register", {
-                first_name:  formData.first_name,
-                last_name:  formData.last_name,
-                email: formData.email,
-                password: formData.password,
-            });
-
-            window.alert("Account Created Successfully");
-            navigate("/");
-
-        } catch (error) {
-            setError("Somthing went wrong");         
-        }finally{
-            setLoading(false);
-        }
-
-    };
-
-
-    return (
-        <div className="min-h-screen flex justify-center items-center">
-            <form className="bg-red-300 py-8 min-w-[400px] flex flex-col justify-center items-center gap-3 px-5 rounded"
-                onSubmit={handleRegister}
-            >
-
-            {/* {Error && <p className="text-red-700 text-sm">{Error}</p>} */}
-
-                <div className="min-w-full pb-1">
-                    <label htmlFor="first_name">First Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="first_name"
-                        value={formData.first_name}
-                        className="min-w-full bg-white"
-                        onChange={handleChange}
-                    />
+                <div className="pt-18 ">
+                    <p className="text-white text-6xl font-bold">Turn your thoughts into clarity</p>
+                    <p className="text-white text-xl mt-7">Write faster, organize smarter, and let AI help you think.</p>
                 </div>
 
-                 <div className="min-w-full pb-1">
-                    <label htmlFor="last_name">Last Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="last_name"
-                        value={formData.last_name}
-                        className="min-w-full bg-white"
-                        onChange={handleChange}
-                    />
-                </div>
+                <div className="mt-14 flex flex-col gap-4 ">
+                    <div className="flex items-center">
+                        <span className=""><FaLightbulb/></span>
+                        <p className="pl-2">Caputre ideas instantly</p>
+                    </div>
+                    <div className="flex items-center">
+                        <span className=""><SlNotebook/></span>
+                        <p className="pl-2">Summarize in seconds</p>
+                    </div>
+                    <div className="flex items-center">
+                        <span className=""><FaSearch/></span>
+                        <p className="pl-2">Find anything with smart search</p>
+                    </div>
+            </div>
 
-                <div className="min-w-full pb-1">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        className="min-w-full bg-white"
-                        onChange={handleChange}
-                    />
-                </div>
 
-                <div className="min-w-full pb-1">
-                    <label htmlFor="pass">Password:</label>
-                    <input
-                        type="password"
-                        id="pass"
-                        name="password"
-                        value={formData.password}
-                        className="min-w-full bg-white"
-                        onChange={handleChange}
-                    />
-                </div>
+            </div>
+            {/* Right site */}
+            <div className="min-w-[50%] flex flex-col justify-center items-center">
 
-                <div className="min-w-full pb-1">
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        className="min-w-full bg-white"
-                        onChange={handleChange}
-                    />
-                </div>
+                <form className="h-auto relative ">
+                    <h1 className="text-2xl font-bold text-center">Create Your Account</h1>
+                    <h4 className="text-gray-400 text-[14px] text-center">Start organizing your thinking today</h4>
 
-                <button
-                    type="submit"
-                    className="border px-2 py-1 rounded-md mt-3 cursor-pointer"
-                    disabled={loading}
-                >
-                    {loading ? "Creating" : "Create Account"}
-                    {/* Create Account */}
-                </button>
+                     <div className="flex flex-col mt-4">
+                        <label htmlFor="name" className="text-black">Full Name:</label>
+                        <input type="text" id="name" name="name" className="w-full border border-gray-300 rounded-lg px-3 py-1 text-sm" placeholder="Jhon Cena" />
+                    </div>
 
-            </form>
+                    <div className="flex flex-col mt-2">
+                        <label htmlFor="email" className="text-black">Email:</label>
+                        <input type="text" id="email" name="email" className="w-full border border-gray-300 rounded-lg px-3 py-1 text-sm" placeholder="you@example.com" />
+                    </div>
+
+                    <div className="relative flex flex-col mt-2">
+                        <label htmlFor="email" className="text-black">Password:</label>
+                        <input type="text" id="email" name="email" className="w-full border border-gray-300 rounded-lg px-3 py-1 text-sm" placeholder="Enter your password" />
+                        <Eye className="absolute mt-7 right-2 text-gray-500" size={18}/>
+                    </div>
+
+                    <div className="min-w-full flex justify-between mt-4">
+                        <p className="flex text-sm gap-1">
+                            <input type="checkbox" className="text-sm"/>
+                            Remember me
+                        </p>
+
+                        <p className="text-blue-800 text-sm">
+                            Forget password?
+                        </p>
+                    </div>
+
+                    <button type="submit" className="w-full font-bold bg-blue-400 mt-3 py-1 rounded-lg">Create account</button>
+
+                    <div className="mt-3 flex items-center gap-3 text-sm text-gray-400">
+                        <div className="h-px flex-1 bg-gray-300" />
+                            <span>or Signup With</span>
+                        <div className="h-px flex-1 bg-gray-300" />
+                    </div>
+                                                                                                    
+                    <button className="w-full text-center border border-gray-400 rounded-lg mt-4 py-1">Continue with google</button>
+                    <button className="w-full text-center border border-gray-400 rounded-lg mt-4 py-1">Continue with Microsoft</button>
+
+                    <p className="text-[12px] mt-1">By creating an account, you agree to our Terms and Privacy Policy.</p>
+                    <p className="text-[12px] text-center mt-3 relative">
+                        Already have an account? 
+                        <Link className="text-blue-800" to="/"> Sign in</Link>
+                    </p>
+
+                </form>
+
+                <p className="text-[12px] text-gray-500 mt-2">@2025 NoteAI</p>
+
+            </div>
         </div>
-    );
-};
-
-export default Register;
-
-
+    </>)
+}
